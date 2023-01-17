@@ -1,72 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
 body {
-  background-color: lightsalmon;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: rgba(220, 231, 120, 0.473);
 }
 * {
-  filter: drop-shadow(2px 2px 2px rgba(49, 6, 6, 0.11));
+  box-sizing: border-box;
 }
+
+.content {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
 h1 {
-  font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 56px;
+  font-family: "Roboto";
   color: #75b79e;
-  margin-top: 100px;
-  margin-bottom: 47px;
 }
-.cards {
-  width: 50%;
+
+.game {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  margin-top: 47px;
+  justify-content: center;
+  align-items: center;
 }
+
 .card {
   width: 117px;
   height: 146px;
+  background: #a7e9af;
+  border: 1px solid #99cea8;
+  border-radius: 5px;
   position: relative;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
 }
 
-.card img {
+.card > img {
   width: 100px;
   height: 100px;
 }
 
-.face {
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
   width: 100%;
   height: 100%;
-  background-color: #a7e9af;
-  border-radius: 10px;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   backface-visibility: hidden;
-  transition: all 0.5s;
-  transform-style: preserve-3d;
+  left: 10px;
+  top: 20px;
 }
 
 .back-face {
   transform: rotateY(180deg);
 }
 
-.card:hover .back-face {
-  transform: rotateY(0deg);
-}
-
-.card:hover .front-face {
-  transform: rotateY(-180deg);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   h1 {
-    text-align: center;
     font-size: 36px;
-  }
-  .cards {
-    display: flex;
-    flex-direction: column;
   }
 }
